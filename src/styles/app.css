@@ -1,0 +1,58 @@
+.app {
+    min-height: 100vh;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 12, 16, 0.55);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    opacity: 0.95;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 999px;
+    color: var(--muted);
+    border: 1px solid transparent;
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.tab:hover {
+    transform: translateY(-1px);
+    background: var(--panel);
+    color: var(--text);
+}
+
+.tab.active {
+    background: var(--panel-2);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.content {
+    padding: 28px 18px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
