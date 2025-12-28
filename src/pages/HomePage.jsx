@@ -73,10 +73,10 @@ export default function HomePage() {
                     style={{
                         width: 96,
                         height: 96,
-                        borderRadius: 24,
+                        borderRadius: 32,
                         border: "1px solid var(--border)",
                         background:
-                            "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03))",
+                            "linear-gradient(135deg, rgba(183,167,255,0.25), rgba(255,255,255,0.04))",
                         display: "grid",
                         placeItems: "center",
                         fontWeight: 700,
@@ -91,7 +91,10 @@ export default function HomePage() {
 
                 <div>
                     <h1 style={{ margin: 0, fontSize: 34, letterSpacing: -0.5 }}>
-                        Roberto — Frontend Developer
+                        Roberto Acevedo Lucena
+                        <span style={{ color: "var(--accent)" }}>
+                            Frontend Developer
+                        </span>
                     </h1>
                     <p style={{ margin: "8px 0 0", color: "var(--muted)", lineHeight: 1.6 }}>
                         Minimal, elegante y oscuro. Tabs por secciones + animaciones suaves. Demos integradas en una única app.

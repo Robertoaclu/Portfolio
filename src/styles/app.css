@@ -43,11 +43,12 @@
     transform: translateY(-1px);
     background: var(--panel);
     color: var(--text);
+    border-color: var(--accent);
 }
 
 .tab.active {
-    background: var(--panel-2);
-    border-color: var(--border);
+    background: var(--accent-soft);
+    border-color: var(--accent);
     color: var(--text);
 }
 

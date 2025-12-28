@@ -9,7 +9,10 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.65);
 
-  --radius: 16px;
+  --accent: #b7a7ff;
+  --accent-soft: rgba(183, 167, 255, 0.15);
+
+  --radius: 18px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 
   --maxw: 1120px;
