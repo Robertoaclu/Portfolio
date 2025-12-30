@@ -1,0 +1,100 @@
+/* Root: SIN borde exterior */
+.sectionTabs {
+    width: 100%;
+}
+
+/* Barra de tabs: alineadas a la IZQ + línea inferior (la que se “corta” bajo la activa) */
+.sectionTabsBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    gap: 0;
+    /* sin separación visual entre tabs */
+    padding: 0;
+    /* pegadas a la izquierda */
+    margin: 0;
+
+    border-bottom: 1px solid rgba(183, 167, 255, 0.18);
+}
+
+/* Tabs: MISMO ancho todas */
+.sectionTab {
+    position: relative;
+
+    width: clamp(120px, 16vw, 150px);
+    text-align: center;
+
+    padding: 12px 14px 10px;
+    font: inherit;
+    color: var(--muted);
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border: 1px solid rgba(183, 167, 255, 0.18);
+    border-bottom: 0;
+    /* para que la base la marque la línea de la barra */
+
+    border-radius: 14px 14px 0 0;
+
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+/* “Unir” bordes entre tabs sin solaparlas (solo colapsa la línea) */
+.sectionTab+.sectionTab {
+    margin-left: -1px;
+}
+
+.sectionTab:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* TAB ACTIVA: sin borde visible + integrada con el panel */
+.sectionTab.isActive {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+
+    /* “sin borde” (visible) como pediste */
+    border-color: transparent;
+    z-index: 2;
+}
+
+/* Esta pieza tapa la línea inferior de la barra JUSTO bajo la tab activa
+   -> efecto “cortado” como en tu ejemplo */
+.sectionTab.isActive::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+
+    /* mismo fondo del panel (para que parezca una sola pieza) */
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Panel: el contenedor del contenido (ÚNICO borde real visible) */
+.sectionTabsPanel {
+    border: 1px solid rgba(183, 167, 255, 0.18);
+    border-top: 0;
+    /* porque arriba ya está la línea de la barra */
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border-radius: 0 18px 18px 18px;
+    padding: 22px 18px 18px;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Focus accesible */
+.sectionTab:focus-visible {
+    outline: 2px solid rgba(183, 167, 255, 0.6);
+    outline-offset: 2px;
+}
